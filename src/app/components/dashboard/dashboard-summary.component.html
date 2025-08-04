@@ -1,0 +1,19 @@
+<div class="main-content-area" style="padding: 0rem 1rem;">
+
+  <ng-container>
+    <div class="dashboard-summary-wrapper">
+      <div class="dashboard-header"></div>
+      <div *ngIf="lastUpdated" class="last-updated-bar">
+        <div class="last-updated-box">
+          Last Updated: <strong>{{ lastUpdated | date:'d MMM yyyy HH:mm' }} WIB</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashboard-sections">
+      Content
+    </div>
+
+  </ng-container>
+
+</div>

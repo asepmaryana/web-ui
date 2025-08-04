@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+:host {
+  --page-background: #f8fafc;
+  --card-background: #F2F2F7;
+  --text-primary: #1e293b;
+  --text-secondary: #6b7280;
+  --primary-color: #3b82f6; 
+  --border-color: #C6C6C8;
+  --container-background: white; 
+  
+  --status-online: #00C7BE;
+  --status-lost: #FF3B30;   
+  --status-running: #00C7BE; 
+  --status-idle: #FF3B30;  
+  --status-maintenance: #FF9500; 
+   --status-unknown: #8e8e93;
+  --alarm-critical: #FF0000;
+  --alarm-major: #0066FF;    
+  --alarm-minor: #FF9900;    
+  --alarm-warning: #FFFF00;  
+  --alarm-notice: #00FF00;  
+}
+
+.loading-state {
+  text-align: center;
+  padding: 20rem;
+  font-size: 1.5rem;
+  color: #666;
+}
+.main-content-area {
+  background-color: #ffffff;
+}
+
+.dashboard-summary-wrapper {
+  background-color: white;
+  padding: 18px;
+  padding-left: 0px;
+  padding-right: 0px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.dashboard-title-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.icon-flash {
+  color: #f59e0b;
+  font-size: 20px;
+}
+.dashboard-title {
+  font-weight: 600;
+  font-size: 1.2em;
+  color: var(--text-primary);
+  margin: 0;
+}
+.sub-title {
+  font-size: 0.85em;
+  color: var(--text-secondary);
+  margin-top: 4px;
+  margin-bottom: 24px;
+}
+.header-actions {
+  color: #9ca3af;
+}
+
+.dashboard-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+.summary-card {
+  background-color: var(--card-background);
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.card-subtitle {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.total-pumps-container {
+  display: flex;
+  align-items: center;
+  gap: 16px; 
+  margin-top: 8px;
+  background-color: var(--container-background);
+  border-radius: 8px;         
+  padding: 10px;              
+  justify-content: center;  
+}
+.icon-circle {
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  width: 52px; 
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  flex-shrink: 0;
+}
+.icon-circle .fas {
+  font-size: 22px; 
+}
+.value-and-unit {
+  line-height: 1;
+  text-align: center;
+}
+.main-value {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.unit-label {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+.card-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.total-label {
+  font-size: 18px;
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.total-value {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.status-items-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 12px;
+  background-color: var(--container-background);
+  border-radius: 8px;
+  padding: 10px;
+}
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;  
+}
+.status-item::before {
+  content: '';
+  width: 12px;  
+  height: 12px;  
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.status-label {
+  color: var(--text-secondary);
+  font-size: 13px; 
+}
+.status-value {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 14px;  
+}
+
+
+.status-item.online::before { background-color: var(--status-online); }
+.status-item.lost::before { background-color: var(--status-lost); }
+.status-item.running::before { background-color: var(--status-running); }
+.status-item.idle::before { background-color: var(--status-idle); }
+.status-item.maintenance::before { background-color: var(--status-maintenance); }
+.status-item.unknown::before { background-color: var(--status-unknown); }
+.status-item.critical::before { background-color: var(--alarm-critical); }
+.status-item.major::before { background-color: var(--alarm-major); }
+.status-item.minor::before { background-color: var(--alarm-minor); }
+.status-item.warning::before { background-color: var(--alarm-warning); }
+.status-item.notice::before { background-color: var(--alarm-notice); }
+
+
+.alarm-container {
+  justify-content: space-between; 
+  padding: 10px; 
+  gap: 8px;
+}
+.alarm-container .status-item {
+  gap: 8px;  
+}
+.alarm-container .status-label, .alarm-container .status-value {
+  font-size: 13px;  
+}
+.last-updated-bar {
+  background-color: #414E84;
+  border-radius: 12px;
+  padding: 8px 12px;
+  margin-bottom: 16px; 
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding-left: 8px;
+}
+
+.last-updated-box {
+  background-color: #EBECF1; 
+  color: #414E84; 
+  padding: 12px 12px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+}
